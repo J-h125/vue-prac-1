@@ -1,17 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <father-1></father-1>
+    <filters-prac></filters-prac>
+    <model-prac :content="content" @input="content =$event"></model-prac>
+    组件上的v-model：{{content}}
+    <vue-set></vue-set>
+    <direct></direct>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Father1 from './components/Father1.vue'
+import FiltersPrac from './components/filtersPrac.vue'
+import ModelPrac from './components/modelPrac.vue'
+import VueSet from './components/VueSet.vue'
+import Direct from './components/CustomDirectives.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Father1,
+    FiltersPrac,
+    ModelPrac,
+    VueSet,
+    Direct
+  },
+  data(){
+    return{
+      content:'v-model内容'
+    }
   }
 }
 </script>
